@@ -1,6 +1,8 @@
 # Nationwide Insurance Chatbot
 This node.js application uses IBM Watson conversation service to assist Nationwide customers in choosing a life Insurance plan. This application allows the customer to have a natural converation with a chatbot.  
 
+<img src="public/img/ChatScreenShot.jpeg" alt="Demo" width="400"/>
+
 A live demo of this app can be seen [here](https://life-insurance-web.mybluemix.net/).
 
 ## Installation Instructions
