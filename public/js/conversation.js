@@ -17,6 +17,8 @@ var ConversationPanel = (function() {
     }
   };
 
+  var img = null;
+
   // Publicly accessible methods defined
   return {
     init: init,
@@ -163,6 +165,16 @@ var ConversationPanel = (function() {
 
     textArray.forEach(function(currentText) {
       if (currentText) {
+
+        if (img == null) {
+          var name = currentText.split(/\s+/).slice(4,5)[0];
+
+          if (name == "Thomas" || name == "Watson" || name == "Bernie" || name == "Tony") {
+            img = "../img/maleWatson.png";
+          } else {
+            img = "../img/femaleWatson.png";
+          }
+        }
         var messageJson = {
           // <div class='segments'>
           'tagName': 'div',
@@ -178,7 +190,7 @@ var ConversationPanel = (function() {
               'children': [{
                 // <p>{messageText}</p>
                 'tagName': 'p',
-                'text': currentText
+                'text': (isUser? currentText : "<img src=\"" + img +  "\" width=\"30\">  " + currentText)
               }]
             }]
           }]
